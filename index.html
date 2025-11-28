@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="bear.css">
+</head>
+
+<body>
+
+  <!-- 地図上の画面-->
+  <div class="map-container">
+    <img src="image/map_illust.jpg" class="map-img">
+
+    <!-- 日付ボックス -->
+    <div id="date-box"></div>
+
+    <!-- クマを複数配置（位置は個別に指定） -->
+    <img src="image/bear.png" class="bear" style="top: 50px; right: 100px;" data-info="6丁目付近で目撃">
+    <img src="image/bear.png" class="bear" style="top: 150px; right: 200px;" data-info="6丁目付近で目撃">
+    <img src="image/bear.png" class="bear" style="top: 250px; right: 350px;" data-info="5丁目付近で目撃">
+    <img src="image/bear.png" class="bear" style="top: 250px; right: 500px;" data-info="5丁目付近で目撃">
+    <img src="image/bear.png" class="bear" style="top: 500px; right: 800px;" data-info="3丁目付近で目撃">
+    <img src="image/bear.png" class="bear" style="top: 550px; right: 100px;" data-info=" 川辺で目撃">
+    <img src="image/bear.png" class="bear" style="top: 570px; right: 200px;" data-info=" 川辺で目撃">
+
+  </div>
+
+  <div class="sidebar">
+    <img src="image/bear.png" class="bear-side" style="top: 20px; right: 50px;">
+    <input type="string" id="region" style="top: 250px; right: 50px; margin: 150px 0px 0px 0px;" placeholder="地域を入力してください">
+    <button>検索</button>
+
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
