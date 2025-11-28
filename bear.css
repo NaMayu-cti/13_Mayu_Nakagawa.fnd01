@@ -5,7 +5,7 @@ html, body {
 }
 
 .map-container {
-  position: relative; /* これがないと絶対配置が効かない */
+  position: relative; /* 絶対配置 */
   width: 100%;
   height: 100vh;
 }
@@ -18,7 +18,6 @@ html, body {
   transform: scaleX(-1); /* 図を反転 */
 }
 
-/* 日付ボックス（map上） */
 #date-box {
   position: absolute;
   top: 16px;
@@ -32,14 +31,13 @@ html, body {
   z-index: 1000;
 }
 
-/* 熊 */
 .bear {
   position: absolute;
   width: 64px;
   height: auto;
   cursor: pointer;
   user-select: none;
-  z-index: 1100; /* date-box より上（ただし popup はさらに高くする） */
+  z-index: 1100; /* 地図の上にするため */
   transition: transform .12s;
 }
 .bear:hover { transform: scale(1.05); }
@@ -50,10 +48,10 @@ html, body {
   height: auto;
   cursor: pointer;
   user-select: none;
-  z-index: 1100; /* date-box より上（ただし popup はさらに高くする） */
+  z-index: 1100;
   transition: transform .12s;
   filter:
-  drop-shadow(2px 0 0 white)
+  drop-shadow(2px 0 0 white) /* 白枠 */
   drop-shadow(-2px 0 0 white)
   drop-shadow(0 2px 0 white)
   drop-shadow(0 -2px 0 white);
@@ -64,18 +62,17 @@ html, body {
   position: fixed;
   left: 0;
   top: 0;
-  width: 250px;       /* サイドバーの幅 */
+  width: 250px;       /* 幅 */
   height: 100vh;
   background: rgba(0, 0, 0); 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  gap: 20px;         /* ボタン同士の間隔 */
+  gap: 20px;
   z-index: 1500;
 }
 
-/* ポップアップ（動的に追加する要素と同じスタイル） */
 .popup {
   position: absolute;
   background: rgba(255,255,255,0.98);
@@ -83,7 +80,7 @@ html, body {
   border-radius: 10px;
   padding: 8px 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-  z-index: 3000; /* 他の要素より上に出す */
+  z-index: 3000;
   pointer-events: auto;
   white-space: nowrap;
   transform-origin: center bottom;
@@ -92,7 +89,6 @@ html, body {
   transition: opacity .18s ease, transform .18s ease;
 }
 
-/* 表示用クラス */
 .popup.show {
   opacity: 1;
   transform: translateY(0) scale(1);
